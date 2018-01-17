@@ -14,6 +14,10 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/register', function(req, res){
     res.render('register')
+});
+
+app.get('/login', function(req, res){
+    res.render('login')
 })
 
 app.listen(3000, () => console.log('Listening on port 3000!'))

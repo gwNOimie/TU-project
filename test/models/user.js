@@ -2,10 +2,13 @@ const expect = require('expect');
 const User = require('../../app/model/user');
 
 describe("User", () => {
-    it("Check find One", () => {
+    it("Check find one user ", () => {
 
     })
-    it("Check Login", () => {
+    it("Check add user", () => {
+
+    })
+    it("Check login", () => {
         var User = new User();
 
         User.personalData.email = "test@example.fr";

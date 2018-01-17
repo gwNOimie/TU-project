@@ -9,6 +9,12 @@ var users = new mongoose.Schema({
 var User = mongoose.model('user', users);
 
 module.exports = {
+    getItemById: (id) => {
+		console.log('getItemById : ' + id);
+		return new Promise((resolve, reject) => {			
+			resolve(User.find({"_id": id}))
+		})
+	},
     getItemByMail: (email) => {
 		console.log('getItemByMail : ' + email);
 		return new Promise((resolve, reject) => {			
@@ -26,7 +32,6 @@ module.exports = {
 				};
 				resolve(result)
 			})
-			
 		})
     },
     checkLogin: (email, password) => {
@@ -38,7 +43,22 @@ module.exports = {
             else {
                 reject("Invalid username or password")
             }
-            
         })
-    }
+    },
+    updateItem: (id, item) => {
+		return new Promise((resolve, reject) => {
+			User.findByIdAndUpdate(id, item, function(err, result) {
+				if (err) {
+					reject(err)
+				};
+				resolve(result)})
+
+	
+		})
+	},
+	deleteItem: (id) => {
+		return new Promise((resolve, reject) => {
+			resolve(User.find({"personalData.email": id}).remove().exec())
+		})
+	}
 }

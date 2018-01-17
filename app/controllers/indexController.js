@@ -13,7 +13,8 @@ class IndexController {
     //   failureRedirect: '/login',
     //   failureFlash: true
     // })
-    return null;
+    res.render('login', { name: req.passport.name });
+    //return null;
   }
 
   auth(req, res) {

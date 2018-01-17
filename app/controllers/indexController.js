@@ -8,10 +8,12 @@ class IndexController {
   }
 
   loginPage(req, res) {
-    res.render('login', { message: req.flash('error') || null })
+    console.log('loginPage')
+    res.render('login'/*, { message: req.flash('error') || null }*/)
   }
 
   loginAction(req, res) {
+    console.log(this.passport)
     this.passport.authenticate('local', {
       successRedirect: '/',
       failureRedirect: '/login',
@@ -24,6 +26,10 @@ class IndexController {
   }
 
   register(req, res) {
+    return null;
+  }
+
+  logout(req, res) {
     return null;
   }
 }

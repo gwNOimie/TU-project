@@ -4,6 +4,8 @@ const session = require("express-session");
 const bodyParser = require("body-parser");
 const app = express();
 
+const passport = require('./passport/passportConfig');
+
 const indexRouter = require('./routes/indexRouter');
 
 // TWIG CONFIGURATION

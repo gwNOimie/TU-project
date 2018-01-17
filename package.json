@@ -1,0 +1,29 @@
+{
+  "name": "tu-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gwNOimie/TU-project.git"
+  },
+  "author": "",
+  "license": "Beerware",
+  "bugs": {
+    "url": "https://github.com/gwNOimie/TU-project/issues"
+  },
+  "homepage": "https://github.com/gwNOimie/TU-project#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "passport": "^0.4.0",
+    "twig": "^1.10.5"
+  },
+  "devDependencies": {
+    "expect": "^22.1.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^4.1.0"
+  }
+}

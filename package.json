@@ -22,7 +22,8 @@
   "dependencies": {
     "express": "^4.16.2",
     "passport": "^0.4.0",
-    "twig": "^1.10.5"
+    "twig": "^1.10.5",
+    "mongoose": "^4.4.15"
   },
   "devDependencies": {
     "expect": "^22.1.0",

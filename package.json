@@ -21,9 +21,10 @@
   "homepage": "https://github.com/gwNOimie/TU-project#readme",
   "dependencies": {
     "express": "^4.16.2",
+    "mongoose": "^4.4.15",
     "passport": "^0.4.0",
-    "twig": "^1.10.5",
-    "mongoose": "^4.4.15"
+    "passport-local": "^1.0.0",
+    "twig": "^1.10.5"
   },
   "devDependencies": {
     "expect": "^22.1.0",

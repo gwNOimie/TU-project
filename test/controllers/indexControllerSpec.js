@@ -1,16 +1,64 @@
 const expect = require('expect');
-const IndexCtrl = require('../../app/controllers/indexController');
+const IndexController = require('../../app/controllers/indexController');
 
 describe("indexController", () => {
-  describe("#index", () => { });
   describe("#login", () => {
-    it("Vérification du paramètre", () => { });
-    it("", () => {
+    beforeEach(() => { })
+    it("Check correct redirection on auth success", () => {
       // arrange
+      const passport = {
+        authenticate() {
+          req.session = {}
+          req.session.user_tmp = {
+            email: 'test@test.test',
+            password: 'testPassword'
+          }
+          res.render('index');
+        }
+      }
+      const req = {
+        body: {
+          email: 'test@test.test',
+          password: 'testPassword'
+        }
+      }
+      const res = {
+        render(viewName, param) {
+          // assert
+          expect(viewName).toBe('index');
+        }
+      }
+      const indexController = new IndexController(passport);
+
       // act
-      // assert
+      indexController.loginAction(req, res);
     });
-    it("", () => { });
+    it("Check correct redirection on auth error", () => {
+      // arrange
+      const passport = {
+        authenticate() {
+          // (+set flash message ?)
+          res.render('login', { message: 'error' });
+        }
+      }
+      const req = {
+        body: {
+          email: 'test@test.test',
+          password: 'testPassword'
+        }
+      }
+
+      const res = {
+        render(viewName, params) {
+          // assert
+          expect(viewName).toBe('login');
+          expect(params).toEqual({ message: 'error' });
+        }
+      }
+      const indexController = new IndexController(passport);
+
+      // act
+      indexController.loginAction(req, res);
+    });
   });
-  describe("#register", () => { });
 });

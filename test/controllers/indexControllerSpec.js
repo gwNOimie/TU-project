@@ -3,6 +3,7 @@ const IndexController = require('../../app/controllers/indexController');
 
 describe("indexController", () => {
   describe("#login", () => {
+    beforeEach(() => { })
     it("Check correct redirection on auth success", () => {
       // arrange
       const passport = {
@@ -12,7 +13,7 @@ describe("indexController", () => {
             email: 'test@test.test',
             password: 'testPassword'
           }
-          res.redirect('/')
+          res.render('index');
         }
       }
       const req = {
@@ -24,25 +25,20 @@ describe("indexController", () => {
       const res = {
         render(viewName, param) {
           // assert
-          console.log(viewName, param)
           expect(viewName).toBe('index');
         }
       }
       const indexController = new IndexController(passport);
 
       // act
-      indexController.index(req, res);
+      indexController.loginAction(req, res);
     });
     it("Check correct redirection on auth error", () => {
       // arrange
       const passport = {
         authenticate() {
-          req.session = {}
-          req.session.user_tmp = {
-            email: 'test@test.test',
-            password: 'testPassword'
-          }
-          res.redirect('/plop')
+          // (+set flash message ?)
+          res.render('login', { message: 'error' });
         }
       }
       const req = {
@@ -52,18 +48,17 @@ describe("indexController", () => {
         }
       }
 
-      // act
       const res = {
-        render(viewName, param) {
+        render(viewName, params) {
           // assert
           expect(viewName).toBe('login');
-          expect(this.flash).toBe(('error'));
+          expect(params).toEqual({ message: 'error' });
         }
       }
       const indexController = new IndexController(passport);
 
       // act
-      indexController.index(req, res);
+      indexController.loginAction(req, res);
     });
   });
 });

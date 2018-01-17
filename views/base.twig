@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="fr">
+<head>
+  {% block head %}
+    <link rel="stylesheet" href="/stylesheets/global.css" />
+    <title>{% block title %}{% endblock %}</title>
+  {% endblock %}
+</head>
+<body>
+  <header class="flex-row">
+    <div><img src="https://imie-ecole-informatique.fr/sites/default/files/logo-imie_3.png" alt="logo appli"></div>
+    <div><h1>TP IMIE</h1></div>
+    <nav>
+      <ul>
+        <li class="inline btn_nav"><a href="" class="link">Connexion</a></li>
+        <li class="inline btn_nav"><a href="" class="link">Inscription</a></li>
+        <li class="inline btn_nav"><a href="" class="link">Profil</a></li>
+        <li class="inline btn_nav"><a href="" class="link">Déconnexion</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div id="content" class="main">{% block content %}{% endblock %}</div>
+  
+  <div id="footer">
+    {% block footer %}
+      &copy; Copyright 2018 by IMIE.
+    {% endblock %}
+  </div>
+</body>
+</html>

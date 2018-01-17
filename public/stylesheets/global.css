@@ -1,0 +1,62 @@
+.none {
+    display: none;
+}
+
+.main {
+    background-color: lightblue;
+}
+
+.inline {
+    display: inline;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.btn_nav {
+    background-color: lightblue;
+    color: white;
+    padding: 5px;
+}
+
+input[type="text"] {
+    padding: 2px;
+}
+
+.flex-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.btn_submit {
+    background-color: #ffffff;
+    padding: 2px;
+    color: cornflowerblue;
+    border: 1px solid cornflowerblue;
+    font-size: 30px;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+.btn_submit:hover,
+.btn_nav:hover {
+    cursor: pointer;
+}
+
+#footer {
+    text-align: center;
+    padding: 3px;
+    margin-top: 10px; 
+}

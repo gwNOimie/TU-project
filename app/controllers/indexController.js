@@ -4,7 +4,7 @@ class IndexController {
   }
 
   index(req, res) {
-    res.render('index');
+    res.render('login');
   }
 
   loginPage(req, res) {

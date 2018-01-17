@@ -20,10 +20,14 @@
   },
   "homepage": "https://github.com/gwNOimie/TU-project#readme",
   "dependencies": {
+    "crypto-js": "^3.1.9-1",
     "express": "^4.16.2",
     "mongoose": "^4.4.15",
     "passport": "^0.4.0",
+<<<<<<< HEAD
     "passport-local": "^1.0.0",
+=======
+>>>>>>> models
     "twig": "^1.10.5"
   },
   "devDependencies": {

@@ -8,7 +8,7 @@ class IndexController {
   }
 
   loginPage(req, res) {
-    res.render('login', { message: req.flash('error') || null })
+    res.render('login'/*, { message: req.flash('error') || null }*/)
   }
 
   loginAction(req, res) {

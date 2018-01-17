@@ -25,6 +25,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 // END OF PASSPORT CONFIGURATION
 
+
 // ROUTES CONFIGURATION
 app.use('/', indexRouter);
 // END OF ROUTES CONFIGURATION

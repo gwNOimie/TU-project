@@ -1,9 +1,18 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
 .none {
     display: none;
 }
 
 .main {
     background-color: lightblue;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
 }
 
 .inline {
@@ -43,6 +52,8 @@ input[type="text"] {
     color: cornflowerblue;
     border: 1px solid cornflowerblue;
     font-size: 30px;
+    display: inline-block;
+    margin-top: 10px;
 }
 
 .link {

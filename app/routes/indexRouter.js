@@ -7,5 +7,6 @@ const indexController = new IndexController(passportConfig);
 
 
 router.get('/', indexController.index);
-router.post('/login', indexController.login);
+router.get('/login', indexController.loginPage)
+router.post('/login', indexController.loginAction);
 router.post('/register', indexController.register);

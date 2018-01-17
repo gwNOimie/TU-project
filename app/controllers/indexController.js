@@ -7,14 +7,16 @@ class IndexController {
     return null;
   }
 
-  login(req, res) {
-    // this.passport.authenticate('local', {
-    //   successRedirect: '/',
-    //   failureRedirect: '/login',
-    //   failureFlash: true
-    // })
-    res.render('login', { name: req.passport.name });
-    //return null;
+  loginPage(req, res) {
+    res.render('login', { message: req.flash('error') || null })
+  }
+
+  loginAction(req, res) {
+    this.passport.authenticate('local', {
+      successRedirect: '/',
+      failureRedirect: '/login',
+      failureFlash: true
+    })   
   }
 
   auth(req, res) {

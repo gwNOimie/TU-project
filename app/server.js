@@ -1,3 +1,4 @@
+const path = require('path')
 const express = require('express');
 const session = require("express-session");
 const bodyParser = require("body-parser");
@@ -6,7 +7,7 @@ const app = express();
 const indexRouter = require('./routes/indexRouter');
 
 // TWIG CONFIGURATION
-app.set('views', `${__dirname}/views`);
+app.set('views', `views`);
 app.set('view engine', 'twig');
 
 // This section is optional and can be used to configure twig.
@@ -26,5 +27,9 @@ app.use(passport.session());
 // ROUTES CONFIGURATION
 app.use('/', indexRouter);
 // END OF ROUTES CONFIGURATION
+
+// PUBLIC PATH CONFIG
+app.use(express.static(path.join(__dirname, '../public')));
+// END OF PUBLIC PATH CONFIG
 
 app.listen(3000, () => console.log('Listening on port 3000!'));

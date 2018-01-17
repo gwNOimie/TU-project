@@ -9,8 +9,6 @@ describe("User", () => {
 
     })
     it("Check login", () => {
-        
-
 
     })
 })

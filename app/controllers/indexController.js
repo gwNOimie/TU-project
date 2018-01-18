@@ -26,6 +26,10 @@ class IndexController {
   register(req, res) {
     return null;
   }
+
+  updateProfile(req, res) {
+    return null;
+  }
 }
 
 module.exports = IndexController;

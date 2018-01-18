@@ -25,7 +25,14 @@
     "express-session": "^1.15.6",
     "mongoose": "^4.13.9",
     "passport": "^0.4.0",
+<<<<<<< HEAD
     "passport-local": "^1.0.0",
+=======
+<<<<<<< HEAD
+    "passport-local": "^1.0.0",
+=======
+>>>>>>> models
+>>>>>>> c266ea9e853078e5bb5598c1bddef44d24c423f4
     "twig": "^1.10.5"
   },
   "devDependencies": {

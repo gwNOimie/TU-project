@@ -1,9 +1,8 @@
 const expect = require('expect');
-const User = require('../../app/model/user');
+const User = require('../../app/models/userModel');
 
 describe("User", () => {
     it("Check find One", () => {
-
     })
     it("Check Login", () => {
         var User = new User();
@@ -15,7 +14,5 @@ describe("User", () => {
             email = "test@example.fr",
             password = SHA256.encrypt("password", "IMIE")
         }
-
-
     })
 })

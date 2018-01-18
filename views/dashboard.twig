@@ -1,0 +1,76 @@
+{% extends "base.twig" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block head %}
+  {{ parent() }}
+{% endblock %}
+
+{% block content %}
+  <h2>My Profile</h2>
+
+<div class="flex-center">
+  <form method="post" action="/profile">
+    <div>
+      <label for="lastname">Lastname:</label><br>
+      <input type="text" name="lastname" placeholder="RAMBO" required>
+    </div>
+    
+    <div>
+      <label for="firstname">Firstname:</label><br>
+      <input type="text" name="firstname" placeholder="John" required>
+    </div>
+
+    <div>
+      <label for="nickname">Nickname:</label><br>
+      <input type="text" name="nickname" placeholder="Vegeta44" required>
+    </div>
+
+    <div>
+      <label for="mail">Email:</label><br>
+      <input type="mail" name="mail" placeholder="jean.dupont@tld.fr" disabled>
+    </div>
+
+    <div>
+      <label for="password">New password:</label><br>
+      <input type="password" name="password" required>
+    </div>
+
+    <div>
+      <label for="password_confirm">Please confirm your new password:</label><br>
+      <input type="password" name="password_confirm" required>
+    </div>
+
+    <div>
+      <label for="birthdate">Birthdate:</label><br>
+      <input type="date" name="birthdate" required>
+    </div>
+
+    <div>
+      <label for="gender">Gender:</label><br>
+      <select name="gender" required>
+        <option>Man</option>
+        <option>Woman</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="presentation">Presentation:</label><br>
+      <textarea name="presentation"></textarea>
+    </div>
+
+    <div>
+      <label for="picture">Picture:</label><br>
+      <textarea name="picture"></textarea>
+    </div>
+
+    <div>
+      <label for="btn_submit" class="btn_submit">Save your modifications</label><br>
+      <input type="submit" name="btn_submit" class="none" id="btn_submit">
+    </div> 
+
+  </form>
+</div>
+  
+{% endblock %}

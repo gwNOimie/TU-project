@@ -13,26 +13,26 @@
     <form method="post" action="/login">
         <div>
             <label>Email:</label><br>
-            <input type="mail" name="mail">
+            <input type="mail" name="mail" required>
         </div>
         
         <div>
-            <label>Mot de passe:</label><br>
-            <input type="password" name="password" >
+            <label>Password:</label><br>
+            <input type="password" name="password" required>
         </div>
 
         <div>
-            <label for="btn_submit" class="btn_submit">Se connecter</label><br>
+            <label for="btn_submit" class="btn_submit">Log in</label><br>
             <input type="submit" name="btn_submit" class="none" id="btn_submit">
         </div> 
     </form>
 
     <div id="provider_login">
-        Se connecter avec <a href="" class="link"> <img  class="logo" src="/images/google.png" alt="logo google">Google</a> 
-        ou <a href="" class="link"> <img class="logo" src="/images/facebook.png" alt="logo google">Facebook</a>
+        Log in with <a href="" class="link"> <img  class="logo" src="/images/google.png" alt="logo google">Google</a> 
+        or <a href="" class="link"> <img class="logo" src="/images/facebook.png" alt="logo google">Facebook</a>
     </div><br>
 
-    <div>Pas encore inscrit ? Cliquez <a href="/register">ici</a> pour créer un compte</div>
+    <div>Doesn't have an account yet? Click <a href="/register">here</a> to create an account</div>
   </div>
   
 {% endblock %}

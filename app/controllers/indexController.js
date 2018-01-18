@@ -16,11 +16,11 @@ class IndexController {
     console.log(req.body)
     console.log('loginAction')
     console.log(this.passport)
-    // this.passport.authenticate('local', {
-    //   successRedirect: '/',
-    //   failureRedirect: '/login',
-    //   failureFlash: true
-    // })
+    this.passport.authenticate('local', {
+      successRedirect: '/',
+      failureRedirect: '/login',
+      failureFlash: true
+    })   
   }
 
   auth(req, res) {

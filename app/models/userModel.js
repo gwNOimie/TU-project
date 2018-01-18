@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 var SHA256 = require("crypto-js/sha256");
 
 mongoose.connect('mongodb://localhost:27017/tuProject', { useMongoClient: true });
@@ -10,23 +10,25 @@ var users = new mongoose.Schema({
 
 var User = mongoose.model('user', users);
 
+const log = s => console.log(s)
+
 module.exports = {
   getItemByMail: (email) => {
-    console.log('getItemByMail : ' + email);
+    log('getItemByMail : ' + email);
     return new Promise((resolve, reject) => {
       User.find({ "personalData.email": email }, (error, results) => {
         if (error) {
-          console.log(error);
+          log(error);
           reject(error);
         }
-        console.log(results);
+        log(results);
         resolve(results);
       })
     })
   },
   addItem: (item) => {
     return new Promise((resolve, reject) => {
-      console.log('addItem');
+      log('addItem');
       var user = new User(item);
 
       user.save(item, function (err, result) {
@@ -39,7 +41,7 @@ module.exports = {
     })
   },
   checkLogin: (email, password) => {
-    console.log('checkLogin')
+    log('checkLogin')
     return new Promise((resolve, reject) => {
       getItemByMail(email).then(user => {
         if (user.personalData.password == SHA256.encrypt(password, "IMIE")) {

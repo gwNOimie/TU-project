@@ -6,7 +6,8 @@ var personalData = new mongoose.Schema ({
     lastname:{ type: String },
     email: { type: String },
     birthdate: { type: Date },
-    gender: { type: mongoose.Schema.Types.ObjectId, ref: 'gender' }
+    gender: { type: mongoose.Schema.Types.ObjectId, ref: 'gender' },
+    password: { type: String }
 });
 
 var PersonalData = mongoose.model('personalData', personalData);

@@ -4,7 +4,7 @@ class IndexController {
   }
 
   index(req, res) {
-    res.render('home');
+    res.render('login');
   }
 
   loginPage(req, res) {
@@ -15,12 +15,12 @@ class IndexController {
   loginAction(req, res) {
     console.log(req.body)
     console.log('loginAction')
-    console.log(this.passport)
-    // this.passport.authenticate('local', {
-    //   successRedirect: '/',
-    //   failureRedirect: '/login',
-    //   failureFlash: true
-    // })
+    // console.log(this.passport)
+    this.passport.authenticate('local', {
+      successRedirect: '/',
+      failureRedirect: '/login',
+      failureFlash: true
+    })
   }
 
   auth(req, res) {

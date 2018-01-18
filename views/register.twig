@@ -12,61 +12,61 @@
 <div class="flex-center">
   <form method="post" action="/register">
     <div>
-      <label for="lastname">Nom:</label><br>
-      <input type="text" name="lastname" placeholder="RAMBO">
+      <label for="lastname">Lastname:</label><br>
+      <input type="text" name="lastname" placeholder="RAMBO" required>
     </div>
     
     <div>
-      <label for="firstname">Prénom:</label><br>
-      <input type="text" name="firstname" placeholder="John">
+      <label for="firstname">Firstname:</label><br>
+      <input type="text" name="firstname" placeholder="John" required>
     </div>
 
     <div>
-      <label for="nickname">Pseudo:</label><br>
-      <input type="text" name="nickname" placeholder="Vegeta44">
+      <label for="nickname">Nickname:</label><br>
+      <input type="text" name="nickname" placeholder="Vegeta44" required>
     </div>
 
     <div>
       <label for="mail">Email:</label><br>
-      <input type="mail" name="mail" placeholder="jean.dupont@tld.fr">
+      <input type="mail" name="mail" placeholder="jean.dupont@tld.fr" required>
     </div>
 
     <div>
-      <label for="password">Mot de passe:</label><br>
-      <input type="password" name="password">
+      <label for="password">Password:</label><br>
+      <input type="password" name="password" required>
     </div>
 
     <div>
-      <label for="password_confirm">Confirmez votre mot de passe:</label><br>
-      <input type="password" name="password_confirm">
+      <label for="password_confirm">Please confirm your password:</label><br>
+      <input type="password" name="password_confirm" required>
     </div>
 
     <div>
-      <label for="birthdate">Date de naissance:</label><br>
-      <input type="date" name="birthdate">
+      <label for="birthdate">Birthdate:</label><br>
+      <input type="date" name="birthdate" required>
     </div>
 
     <div>
-      <label for="gender">Sexe:</label><br>
-      <select name="gender">
-        <option>Homme</option>
-        <option>Femme</option>
-        <option>Autre</option>
+      <label for="gender">Gender:</label><br>
+      <select name="gender" required>
+        <option>Man</option>
+        <option>Woman</option>
+        <option>Other</option>
       </select>
     </div>
 
     <div>
-      <label for="presentation">Présentation:</label><br>
+      <label for="presentation">Presentation:</label><br>
       <textarea name="presentation"></textarea>
     </div>
 
     <div>
-      <label for="picture">Photo:</label><br>
+      <label for="picture">Picture:</label><br>
       <textarea name="picture"></textarea>
     </div>
 
     <div>
-      <label for="btn_submit" class="btn_submit">S'inscrire</label><br>
+      <label for="btn_submit" class="btn_submit">Sign in</label><br>
       <input type="submit" name="btn_submit" class="none" id="btn_submit">
     </div> 
 

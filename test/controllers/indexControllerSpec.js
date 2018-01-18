@@ -3,7 +3,6 @@ const IndexController = require('../../app/controllers/indexController');
 
 describe("indexController", () => {
   describe("#login", () => {
-    beforeEach(() => { })
     it("Check correct redirection on auth success", () => {
       // arrange
       const passport = {
@@ -61,4 +60,9 @@ describe("indexController", () => {
       indexController.loginAction(req, res);
     });
   });
+  describe('#logout', () => {
+    it('Redirection vers la page de connexion', () => {
+
+    })
+  })
 });

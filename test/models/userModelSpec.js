@@ -12,8 +12,8 @@ describe("User", () => {
         User.personalData.password = SHA256.encrypt("password", "IMIE");
 
         const req = {
-            email = "test@example.fr",
-            password = SHA256.encrypt("password", "IMIE")
+            email: "test@example.fr",
+            password: SHA256.encrypt("password", "IMIE")
         }
 
 

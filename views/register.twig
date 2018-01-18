@@ -13,42 +13,42 @@
   <form method="post" action="/register">
     <div>
       <label for="lastname">Lastname:</label><br>
-      <input type="text" name="lastname" placeholder="RAMBO">
+      <input type="text" name="lastname" placeholder="RAMBO" required>
     </div>
     
     <div>
       <label for="firstname">Firstname:</label><br>
-      <input type="text" name="firstname" placeholder="John">
+      <input type="text" name="firstname" placeholder="John" required>
     </div>
 
     <div>
       <label for="nickname">Nickname:</label><br>
-      <input type="text" name="nickname" placeholder="Vegeta44">
+      <input type="text" name="nickname" placeholder="Vegeta44" required>
     </div>
 
     <div>
       <label for="mail">Email:</label><br>
-      <input type="mail" name="mail" placeholder="jean.dupont@tld.fr">
+      <input type="mail" name="mail" placeholder="jean.dupont@tld.fr" required>
     </div>
 
     <div>
       <label for="password">Password:</label><br>
-      <input type="password" name="password">
+      <input type="password" name="password" required>
     </div>
 
     <div>
       <label for="password_confirm">Please confirm your password:</label><br>
-      <input type="password" name="password_confirm">
+      <input type="password" name="password_confirm" required>
     </div>
 
     <div>
       <label for="birthdate">Birthdate:</label><br>
-      <input type="date" name="birthdate">
+      <input type="date" name="birthdate" required>
     </div>
 
     <div>
       <label for="gender">Gender:</label><br>
-      <select name="gender">
+      <select name="gender" required>
         <option>Man</option>
         <option>Woman</option>
         <option>Other</option>

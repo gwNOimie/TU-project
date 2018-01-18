@@ -3,6 +3,7 @@ const express = require('express');
 const session = require("express-session");
 const bodyParser = require("body-parser");
 const app = express();
+const passport = require('passport');
 
 const indexRouter = require('./routes/indexRouter');
 
@@ -16,20 +17,25 @@ app.set('twig options', {
 });
 // END OF TWIG CONFIGURATION
 
+// PUBLIC PATH CONFIG
+app.use(express.static(path.join(__dirname, '../public')));
+// END OF PUBLIC PATH CONFIG
+
 // PASSPORT CONFIGURATION
-app.use(express.static("public"));
-app.use(session({ secret: "cats" }));
+// app.use(express.static("public"));
+app.use(session({
+  secret: "cats",
+  resave: true,
+  saveUninitialized: true
+}));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(passport.initialize());
 app.use(passport.session());
+require('./passport/passportConfig')(passport);
 // END OF PASSPORT CONFIGURATION
 
 // ROUTES CONFIGURATION
 app.use('/', indexRouter);
 // END OF ROUTES CONFIGURATION
-
-// PUBLIC PATH CONFIG
-app.use(express.static(path.join(__dirname, '../public')));
-// END OF PUBLIC PATH CONFIG
 
 app.listen(3000, () => console.log('Listening on port 3000!'));

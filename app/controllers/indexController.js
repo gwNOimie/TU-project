@@ -4,19 +4,23 @@ class IndexController {
   }
 
   index(req, res) {
-    res.render('index');
+    res.render('home');
   }
 
   loginPage(req, res) {
-    res.render('login', { message: req.flash('error') || null })
+    console.log('loginPage')
+    res.render('login'/*, { message: req.flash('error') || null }*/)
   }
 
   loginAction(req, res) {
-    this.passport.authenticate('local', {
-      successRedirect: '/',
-      failureRedirect: '/login',
-      failureFlash: true
-    })
+    console.log(req.body)
+    console.log('loginAction')
+    console.log(this.passport)
+    // this.passport.authenticate('local', {
+    //   successRedirect: '/',
+    //   failureRedirect: '/login',
+    //   failureFlash: true
+    // })
   }
 
   auth(req, res) {
@@ -24,6 +28,10 @@ class IndexController {
   }
 
   register(req, res) {
+    return null;
+  }
+
+  logout(req, res) {
     return null;
   }
 }

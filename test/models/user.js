@@ -2,13 +2,17 @@ const expect = require('expect');
 const User = require('../../app/models/userModel');
 
 describe("User", () => {
-    it("Check find one user ", () => {
-
+    it("Check find One", () => {
     })
-    it("Check add user", () => {
+    it("Check Login", () => {
+        var User = new User();
 
-    })
-    it("Check login", () => {
+        User.personalData.email = "test@example.fr";
+        User.personalData.password = SHA256.encrypt("password", "IMIE");
 
+        const req = {
+            email = "test@example.fr",
+            password = SHA256.encrypt("password", "IMIE")
+        }
     })
 })
